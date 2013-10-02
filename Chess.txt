@@ -1,0 +1,98 @@
+/* Chess.txt */
+
+Ideology behind the Chess Game.
+
+As of 3/10/13
+
+	Have done:
+		-Implemented Player class. Now two players can move and capture pieces.
+		-two players choose pieces and moves, can simulate gameplay.
+
+	In Progress:
+		-pawns can only move two spaces when on starting row. pawns need to be able to capture diagonally, make sure they can't capture forward
+	
+	Need to do:
+		-put coordinates on all squares
+		-Adress errors for when player does not enter a valid piece or move choice
+			(see BankApp lab from cs61b for their handling of errors in app)
+			i) create and throw exceptions
+			ii) if selected square is empty, recall takeTurn
+			i) make sure you cannot select a move outside of array
+
+		-Gameplay:
+			i) determine while condition in Game.java
+				a) maybe make a hasKing method
+				b) remove pieces when captured
+			ii) CHECK / CKECKMATE - find a way to find if king is in check
+				a) iterate through all opponent pieces every move, and find their valid moves. if one of the valid_moves contains the king, it is in check.
+				b) if in check, only can pick moves that get out of check
+					1. for valid moves, can check if move would put king in check, and only add non-check moves to list
+					2. after move is selected, could check only that move
+				c) when king tries to move, valid moves should check if move will put king in check. 
+					1. if inCheck, and there are no valid moves for the king
+						-iterate through all pieces and see if any of their moves will put the king out of check
+						-if not, king is in checkmate
+
+		-figure out how two and implement graphic images for chess pieces
+		-create documentation for how the game works
+
+
+
+
+As of 3/9/13
+
+	Have done:
+		-Implemented Player class. Now two players can move and capture pieces.
+		-two players choose pieces and moves, can simulate gameplay.
+	
+	Need to do:
+		-Need to adress top & bottom row players not being able to move
+		-put coordinates on all squares
+		-pawns need to be able to capture diagonally, make sure they can't capture forward
+		-Adress errors for when player does not enter a valid piece or move choice
+			(see BankApp lab from cs61b for their handling of errors in app)
+			i) create and throw exceptions
+			ii) if selected square is empty, recall takeTurn
+		-Change valid_moves Move[] lists to dynamic arrays (ArrayLists) to get rid of commas at end
+			i) make sure you cannot select a move outside of array
+
+		-Gameplay:
+			i) determine while condition in Game.java
+				a) maybe make a hasKing method
+				b) keep track of all pieces each side has, remove when captured
+			ii) CHECK / CKECKMATE - find a way to find if king is in check
+				a) iterate through all opponent pieces every move, and find their valid moves. if one of the valid_moves contains the king, it is in check.
+				b) if in check, only can pick moves that get out of check
+					1. for valid moves, can check if move would put king in check, and only add non-check moves to list
+					2. after move is selected, could check only that move
+				c) when king tries to move, valid moves should check if move will put king in check. 
+					1. if inCheck, and there are no valid moves for the king
+						-iterate through all pieces and see if any of their moves will put the king out of check
+						-if not, king is in checkmate
+
+		-figure out how two and implement graphic images for chess pieces
+		-create documentation for how the game works
+
+
+
+
+As of 3/8/13
+
+	Have done: 
+		1. Created a board class
+		2. Create pieces, determin their valid moves
+		3. Create Game class, where game will be played. Currently using main method for testing.
+		4. Created printable board (need to mess with x, y coordinates)
+
+	Need to do:
+
+		FINISH CREATING PIECES: King
+
+		1. Have Pieces capture (when not empty, determing if same color or not for capturing)
+		2. write remove method in board class, for when pices are captures.
+
+		3. In Game.java
+			a) create a way for two players to play.
+			b) initialize the board filled with pieces
+
+		4. create gameplay
